@@ -1,4 +1,6 @@
 <?php 
+require_once __DIR__ . '/Category.php';
+
 class Prdouct{
     /** @var [Category]*/
     private $category;
@@ -9,7 +11,7 @@ class Prdouct{
     private $imageUrl;
     private $isAvailable;
 
-    public function __construct($category, $name, $brand, $price, $imageUrl, $isAvailable){
+    public function __construct( category $category, $name, $brand, $price, $imageUrl, $isAvailable){
         $this->category = $category;
         $this->name = $name;
         $this->brand = $brand;
