@@ -1,23 +1,23 @@
 <?php 
-class Food extends Prdouct{
-    private $calories;
+require_once __DIR__ . '/Product.php';
+
+class Food extends Product {
     private $weight;
     private $ingredients;
+    private $calories;
 
-    public function __construct($weight, $calories, $ingredients, Category $category, $name, $brand, $price, $imageUrl, $isAvailable)
-    {
-        parent::__construct($category, $name, $brand, $price, $imageUrl, $isAvailable);
-        $this ->weight = $weight;
-        $this->calories = $calories;
+    public function __construct($name, $brand, $price, $imageUrl, $isAvailable, Category $category, $weight, $ingredients, $calories) {
+        parent::__construct($name, $brand, $price, $imageUrl, $isAvailable, $category);
+        $this->weight = $weight;
         $this->ingredients = $ingredients;
+        $this->calories = $calories;
     }
-    public function getWeight(){
+
+    public function getWeight() {
         return $this->weight;
     }
-    public function getCalories(){
-        return $this->calories;
-    }
-    public function getIngredients(){
+
+    public function getIngredients() {
         return $this->ingredients;
     }
 }

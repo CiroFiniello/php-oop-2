@@ -1,19 +1,21 @@
 <?php 
-class Toy extends Prdouct{
+require_once __DIR__ . '/Product.php';
+
+class Toy extends Product {
     private $material;
     private $color;
 
-
-    public function __construct(Category $category, $name, $brand, $price, $imageUrl, $isAvailable,$material, $color)
-    {
-        parent::__construct($category, $name, $brand, $price, $imageUrl, $isAvailable);
-        $this ->color = $color;
+    public function __construct($name, $brand, $price, $imageUrl, $isAvailable, Category $category, $material, $color) {
+        parent::__construct($name, $brand, $price, $imageUrl, $isAvailable, $category);
         $this->material = $material;
+        $this->color = $color;
     }
-    public function getMaterial(){
+
+    public function getMaterial() {
         return $this->material;
     }
-    public function getColor(){
+
+    public function getColor() {
         return $this->color;
     }
 }

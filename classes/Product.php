@@ -1,8 +1,8 @@
 <?php 
 require_once __DIR__ . '/Category.php';
 
-class Prdouct{
-    /** @var [Category]*/
+class Product {
+    /** @var Category */
     private $category;
 
     private $name;
@@ -11,31 +11,37 @@ class Prdouct{
     private $imageUrl;
     private $isAvailable;
 
-    public function __construct( category $category, $name, $brand, $price, $imageUrl, $isAvailable){
+    public function __construct($name, $brand, $price, $imageUrl, $isAvailable, Category $category) {
         $this->category = $category;
         $this->name = $name;
         $this->brand = $brand;
         $this->price = $price;
         $this->imageUrl = $imageUrl;
-        $this->isAvailable =$isAvailable;
+        $this->isAvailable = $isAvailable;
     }
 
-    public function getName(){
+    public function getName() {
         return $this->name;
     }
-    public function getPrice(){
+
+    public function getPrice() {
         return $this->price;
     }
-    public function getImageUrl(){
+
+    public function getImageUrl() {
         return $this->imageUrl;
     }
-    public function getIsAvailable(){
+
+    public function getIsAvailable() {
         return $this->isAvailable;
     }
-    public function getBrand(){
+
+    public function getBrand() {
         return $this->brand;
     }
-    public function getCategory(){
+
+    public function getCategory() {
         return $this->category;
     }
 }
+?>

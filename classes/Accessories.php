@@ -1,12 +1,11 @@
-<?php 
-class Accessories extends Prdouct{
+<?php class Accessories extends Product{
     private $size;
     private $function;
 
 
-    public function __construct($weight, $calories, $ingredients, Category$category, $name, $brand, $price, $imageUrl, $isAvailable)
+    public function __construct($name, $brand, $price, $imageUrl, $isAvailable, Category $category, $size, $function)
     {
-        parent::__construct( category $category, $name, $brand, $price, $imageUrl, $isAvailable);
+        parent::__construct( $name, $brand, $price, $imageUrl, $isAvailable, $category);
         $this ->size = $size;
         $this->function = $function;
     }
