@@ -15,14 +15,24 @@ require_once __DIR__ . '/db/db.php';
     
 <main class="container">
     <div class="row">
-        <ul>
             <?php foreach ($products as $product) { ?>
-                <li>
-                    <?php echo $product->getName() ?> della <?php echo
-                    $product->getBrand() ?>
-                </li>
+                <article class="col-4">
+                    <div class="card my-3">
+                        <div class="card-body">
+                            <div class="card-image">
+                                <img src="<?php echo $product->getImageUrl() ?>" alt="" class="img-fluid">
+                            </div>
+                        <h5 class="card-title">
+                            <?php echo $product->getName() ?>
+                        </h5>
+                        <p class="card-text">della: <?php echo $product->getBrand() ?></p>
+                        <p class="card-text">prezzo: <?php echo $product->getPrice() ?></p>
+                        <p class="card-text">Categoria: <?php echo $product->getCategory()->getName(); ?></p>
+                        </div>
+                    </div>
+                    
+                </article>
             <?php } ?>
-        </ul>
     </div>
     </main>
 
